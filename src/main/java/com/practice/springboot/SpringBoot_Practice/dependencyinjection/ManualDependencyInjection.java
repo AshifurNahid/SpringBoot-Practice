@@ -21,11 +21,11 @@ class UserService {
 }
 
 public class ManualDependencyInjection {
-    public static void main(String[] args) {
-        // Manually inject the dependency
-        DatabaseService dbService = new DatabaseService();
-        UserService userService = new UserService(dbService);
-
-        userService.process();
-    }
+//    public static void main(String[] args) {
+//        // Manually inject the dependency
+//        DatabaseService dbService = new DatabaseService();
+//        UserService userService = new UserService(dbService);
+//
+//        userService.process();
+//    }
 }
