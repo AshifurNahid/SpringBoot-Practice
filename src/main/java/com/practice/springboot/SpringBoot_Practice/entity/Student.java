@@ -18,10 +18,12 @@ public class Student {
     private long id;
     @Column(name="name", nullable = false)
     private String name;
-    @Column(name="email", unique = true, nullable = false)
+    @Column(name="email", nullable = false)
     private String email;
     @Column(name="address")
     private String address;
-    @Column(name="phone_number", unique = true)
+    @Column(name="phone_number")
     private String phoneNumber;
+    @Embedded
+    private Guardian guardian;
 }
