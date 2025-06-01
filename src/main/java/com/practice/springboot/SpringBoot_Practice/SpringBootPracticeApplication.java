@@ -9,13 +9,13 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-public class SpringBootPracticeApplication implements CommandLineRunner {
-	private final StudentService studentService;
+public class SpringBootPracticeApplication {
+//	private final StudentService studentService;
 
 	// Constructor injection
-	public SpringBootPracticeApplication(StudentService studentService) {
-		this.studentService = studentService;
-	}
+//	public SpringBootPracticeApplication(StudentService studentService) {
+//		this.studentService = studentService;
+//	}
 
 
 	public static void main(String[] args) {
@@ -24,15 +24,15 @@ public class SpringBootPracticeApplication implements CommandLineRunner {
 
 
 	}
-	@Override
-	public void run(String... args) throws Exception {
-		// This will execute when the application starts
-		//studentService.saveStudent();
-		//System.out.println("Student saved successfully!");
-		//studentService.getStudentByName("John Doe");
-		//studentService.getStudentByNameLike("John%");
-		//studentService.updateStudent("John Doe2", "ashifurnahid32@gmail.com");
-		studentService.getStudentByEmailNative("ashifurnahid32@gmail.com");
-
-	}
+//	@Override
+//	public void run(String... args) throws Exception {
+//		// This will execute when the application starts
+//		//studentService.saveStudent();
+//		//System.out.println("Student saved successfully!");
+//		//studentService.getStudentByName("John Doe");
+//		//studentService.getStudentByNameLike("John%");
+//		//studentService.updateStudent("John Doe2", "ashifurnahid32@gmail.com");
+//		studentService.getStudentByEmailNative("ashifurnahid32@gmail.com");
+//
+//	}
 }

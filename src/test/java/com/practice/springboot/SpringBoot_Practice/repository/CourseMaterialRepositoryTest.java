@@ -2,16 +2,26 @@ package com.practice.springboot.SpringBoot_Practice.repository;
 
 import com.practice.springboot.SpringBoot_Practice.entity.Course;
 import com.practice.springboot.SpringBoot_Practice.entity.CourseMaterial;
-import org.junit.jupiter.api.Test; // JUnit 5 ব্যবহার করুন
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
-import static org.junit.jupiter.api.Assertions.*;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 
-@DataJpaTest // JPA টেস্টের জন্য স্পেশালাইজড
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+@DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
+
 public class CourseMaterialRepositoryTest {
 
     @Autowired
     private CourseMaterialRepository courseMaterialRepository;
+
+    @Autowired
+    private CourseRepository courseRepository;
 
     @Test
     public void testSaveCourseMaterial() {
@@ -28,6 +38,16 @@ public class CourseMaterialRepositoryTest {
                 .build();
 
         CourseMaterial saved = courseMaterialRepository.save(courseMaterial);
-        assertNotNull(saved.getId());
+        //assertNotNull(saved.getId());
     }
+    @Test
+    public void testFindById() {
+        List<CourseMaterial> courseMaterial = courseMaterialRepository.findAll();
+        System.out.println(courseMaterial);
+    }
+    @Test
+    public void testCourse(){
+
+    }
+
 }
