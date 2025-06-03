@@ -2,8 +2,10 @@ package com.practice.springboot.SpringBoot_Practice;
 
 import com.practice.springboot.SpringBoot_Practice.entity.Course;
 import com.practice.springboot.SpringBoot_Practice.entity.CourseMaterial;
+import com.practice.springboot.SpringBoot_Practice.entity.Teacher;
 import com.practice.springboot.SpringBoot_Practice.repository.CourseMaterialRepository;
 import com.practice.springboot.SpringBoot_Practice.repository.CourseRepository;
+import com.practice.springboot.SpringBoot_Practice.repository.TeacherRepository;
 import com.practice.springboot.SpringBoot_Practice.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -17,17 +19,18 @@ import java.util.List;
 @SpringBootApplication
 @EnableAspectJAutoProxy(proxyTargetClass = true)
 public class SpringBootPracticeApplication implements CommandLineRunner {
-	private final StudentService studentService;
+	@Autowired
+	private  StudentService studentService;
 	@Autowired
 	private CourseRepository courseRepository;
-
-
-	// Constructor injection
-	public SpringBootPracticeApplication(StudentService studentService) {
-		this.studentService = studentService;
-	}
 	@Autowired
 	private CourseMaterialRepository courseMaterialRepository;
+	@Autowired
+	private TeacherRepository teacherRepository;
+
+
+
+
 
 
 
@@ -47,23 +50,54 @@ public class SpringBootPracticeApplication implements CommandLineRunner {
 		//studentService.getStudentByNameLike("John%");
 		//studentService.updateStudent("John Doe2", "ashifurnahid32@gmail.com");
 
-		Course course = Course.builder()
-				.title("Spring Boot Course")
-				.description("Learn Spring Boot from scratch")
-				.credit(3)
+//		Course course = Course.builder()
+//				.title("Spring Boot Course")
+//				.description("Learn Spring Boot from scratch")
+//				.credit(3)
+//				.build();
+//
+//		CourseMaterial courseMaterial = CourseMaterial.builder()
+//				.url("https://example.com/course-material")
+//				.description("Course material description")
+//				.course(course)
+//				.build();
+//		course.setCourseMaterial(courseMaterial);
+//		CourseMaterial saved = courseMaterialRepository.save(courseMaterial);
+//		System.out.println("Course Material saved successfully: " + saved.getId());
+		Teacher teacher = Teacher.builder()
+				.name("John Smith")
+				.subject("Mathematics")
+				.email("sykot111@gmail.com")
+				.phoneNumber("1234567890")
 				.build();
-
-		CourseMaterial courseMaterial = CourseMaterial.builder()
-				.url("https://example.com/course-material")
-				.description("Course material description")
-				.course(course)
+		Course course1 = Course.builder()
+				.title("Advanced Mathematics")
+				.description("In-depth study of advanced mathematical concepts")
+				.credit(4)
+				.teacher(teacher)
 				.build();
+		Course course2 = Course.builder()
+				.title("Advanced Mathematics")
+				.description("In-depth study of advanced mathematical concepts")
+				.credit(4)
+				.teacher(teacher)
+				.build();
+		List<Course> courses = List.of(course1, course2);
+		teacher.setCourses(courses);
+		teacherRepository.save(teacher);
 
-		CourseMaterial saved = courseMaterialRepository.save(courseMaterial);
 
-
-		List<CourseMaterial> courseMaterialList = courseMaterialRepository.findAll();
-		System.out.println(courseMaterialList);
+		//List<CourseMaterial> courseMaterialList = courseMaterialRepository.findAll();
+		//List<Course> courseList = courseRepository.findAll();
+		//System.out.println(courseMaterialList);
+		//System.out.println(courseList);
+//		for( Course course1 : courseList) {
+//			System.out.println(course1.getTitle());
+//			System.out.println(course1.getDescription());
+//			System.out.println(course1.getCredit());
+//			System.out.println(course1.getCourseMaterial());
+//			System.out.println("===================================");
+//		}
 
 
 
