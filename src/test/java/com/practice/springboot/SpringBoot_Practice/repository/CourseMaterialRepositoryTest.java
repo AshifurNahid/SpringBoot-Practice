@@ -1,7 +1,9 @@
 package com.practice.springboot.SpringBoot_Practice.repository;
 
-import com.practice.springboot.SpringBoot_Practice.entity.Course;
-import com.practice.springboot.SpringBoot_Practice.entity.CourseMaterial;
+import com.practice.springboot.SpringBoot_Practice.jpa.entity.Course;
+import com.practice.springboot.SpringBoot_Practice.jpa.entity.CourseMaterial;
+import com.practice.springboot.SpringBoot_Practice.jpa.repository.CourseMaterialRepository;
+import com.practice.springboot.SpringBoot_Practice.jpa.repository.CourseRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;

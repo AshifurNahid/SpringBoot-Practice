@@ -1,4 +1,4 @@
-package com.practice.springboot.SpringBoot_Practice.entity;
+package com.practice.springboot.SpringBoot_Practice.jpa.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,7 +24,7 @@ public class CourseMaterial {
     @Column(name = "description")
     private String description;
 
-    @OneToOne(cascade = CascadeType.ALL )
+    @OneToOne(cascade = CascadeType.ALL , optional = false)
     @JoinColumn(name = "course_id", referencedColumnName = "courseId")
     private Course course;
 }

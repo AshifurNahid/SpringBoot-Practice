@@ -1,6 +1,6 @@
-package com.practice.springboot.SpringBoot_Practice.repository;
+package com.practice.springboot.SpringBoot_Practice.jpa.repository;
 
-import com.practice.springboot.SpringBoot_Practice.entity.Student;
+import com.practice.springboot.SpringBoot_Practice.jpa.entity.Student;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

@@ -1,11 +1,10 @@
-package com.practice.springboot.SpringBoot_Practice.service;
+package com.practice.springboot.SpringBoot_Practice.jpa.service;
 
 
-import com.practice.springboot.SpringBoot_Practice.entity.Guardian;
-import com.practice.springboot.SpringBoot_Practice.entity.Student;
-import com.practice.springboot.SpringBoot_Practice.repository.StudentRepository;
+import com.practice.springboot.SpringBoot_Practice.jpa.entity.Guardian;
+import com.practice.springboot.SpringBoot_Practice.jpa.entity.Student;
+import com.practice.springboot.SpringBoot_Practice.jpa.repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
-import org.junit.Test;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor

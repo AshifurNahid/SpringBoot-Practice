@@ -1,4 +1,4 @@
-package com.practice.springboot.SpringBoot_Practice.entity;
+package com.practice.springboot.SpringBoot_Practice.jpa.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

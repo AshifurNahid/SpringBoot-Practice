@@ -1,6 +1,6 @@
-package com.practice.springboot.SpringBoot_Practice.repository;
+package com.practice.springboot.SpringBoot_Practice.jpa.repository;
 
-import com.practice.springboot.SpringBoot_Practice.entity.CourseMaterial;
+import com.practice.springboot.SpringBoot_Practice.jpa.entity.CourseMaterial;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
